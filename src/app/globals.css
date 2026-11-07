@@ -68,20 +68,14 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; }
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
 }
-.wordmark { display: grid; gap: 1px; }
-.wordmark strong {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.22em;
-  padding-left: 0.22em;
-}
-.wordmark span {
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.wordmark { display: block; width: max-content; line-height: 0; }
+.site-header .logo-full,
+.logo-footer,
+.hero-logo { display: block; height: auto; }
+.site-header .logo-compact { display: none; width: 112px; height: auto; }
+.logo-full { width: 158px; }
+.logo-footer { width: 158px; }
+.hero-logo { width: 172px; margin: 0 0 16px; }
 .nav { display: flex; gap: 22px; align-items: center; margin-left: auto; font-size: 14px; font-weight: 500; }
 .nav a { color: var(--ink); }
 .nav a:hover { color: var(--blue); }
@@ -287,7 +281,6 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; }
 
 .footer { border-top: 1px solid var(--line); padding: 48px 0 28px; background: var(--sand); }
 .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 28px; }
-.footer .wordmark strong { letter-spacing: 0.18em; font-size: 14px; }
 .footer h3 { margin: 0 0 12px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
 .footer a, .footer p { display: block; margin: 0 0 8px; color: var(--muted); font-size: 14px; }
 .footer a:hover { color: var(--blue); }
@@ -461,6 +454,8 @@ fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
 @media (max-width: 767px) {
   .wrap, .detail-hero { width: min(var(--max), calc(100% - 28px)); }
   .nav, .nav-cta { display: none; }
+  .site-header .logo-full { display: none; }
+  .site-header .logo-compact { display: block; }
   .menu-button { display: inline-flex; margin-left: auto; background: none; border: 0; color: var(--ink); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
   .nav-panel {
     display: grid;

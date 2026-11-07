@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Wordmark } from "@/components/wordmark";
 
 const links = [
   ["Journeys", "/journeys"],
@@ -17,8 +18,8 @@ export function Header({ solid: _solid = true }: { solid?: boolean }) {
   return (
     <header className="site-header solid">
       <Link href="/" className="wordmark" aria-label="AURA, Curated Journeys">
-        <strong>AURA</strong>
-        <span>Curated Journeys</span>
+        <Wordmark variant="full" className="logo-full" />
+        <Wordmark variant="compact" className="logo-compact" />
       </Link>
       <nav className="nav" aria-label="Primary">
         {links.map(([label, href]) => (

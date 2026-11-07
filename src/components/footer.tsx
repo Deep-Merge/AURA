@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Wordmark } from "@/components/wordmark";
 import { subscribe } from "@/lib/actions";
 
 export function Footer({ credit }: { credit?: string }) {
@@ -7,9 +8,8 @@ export function Footer({ credit }: { credit?: string }) {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="wordmark">
-              <strong>AURA</strong>
-              <span>Curated Journeys</span>
+            <Link href="/" className="wordmark" aria-label="AURA, Curated Journeys">
+              <Wordmark variant="footer" className="logo-footer" />
             </Link>
             <p style={{ marginTop: 16 }}>Beyond the ordinary.</p>
             <form className="news" action={subscribe}>
