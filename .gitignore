@@ -1,0 +1,8 @@
+node_modules
+.next
+data/desk.json
+.env
+.env.local
+*.log
+_docs/
+data/
