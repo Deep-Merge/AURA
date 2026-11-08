@@ -9,7 +9,7 @@ export function Footer({ credit }: { credit?: string }) {
         <div className="footer-grid">
           <div>
             <Link href="/" className="wordmark" aria-label="AURA, Curated Journeys">
-              <Wordmark variant="footer" className="logo-footer" />
+              <Wordmark className="logo-footer" />
             </Link>
             <p style={{ marginTop: 16 }}>Beyond the ordinary.</p>
             <form className="news" action={subscribe}>

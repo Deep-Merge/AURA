@@ -1,6 +1,5 @@
 node_modules
 .next
-data/desk.json
 .env
 .env.local
 *.log

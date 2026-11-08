@@ -18,8 +18,8 @@ export function Header({ solid: _solid = true }: { solid?: boolean }) {
   return (
     <header className="site-header solid">
       <Link href="/" className="wordmark" aria-label="AURA, Curated Journeys">
-        <Wordmark variant="full" className="logo-full" />
-        <Wordmark variant="compact" className="logo-compact" />
+        <Wordmark className="logo-full" priority />
+        <Wordmark className="logo-compact" />
       </Link>
       <nav className="nav" aria-label="Primary">
         {links.map(([label, href]) => (

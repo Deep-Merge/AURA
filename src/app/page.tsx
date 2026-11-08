@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { Wordmark } from "@/components/wordmark";
 import { Combo } from "@/components/combo";
 import { IndexSwitch } from "@/components/index-switch";
 import { Credit, Photo } from "@/components/photo";
@@ -26,7 +25,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </div>
           <div className="hero-shade" />
           <div className="hero-copy">
-            <Wordmark variant="full" tone="light" className="hero-logo" labelled />
             <h1 className="display">Extraordinary places. Unforgettable journeys.</h1>
             <p className="support">Thoughtfully curated escapes for those who believe the journey should be as remarkable as the destination.</p>
             <div className="actions">
