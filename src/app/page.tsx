@@ -1,15 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Combo } from "@/components/combo";
 import { IndexSwitch } from "@/components/index-switch";
 import { Credit, Photo } from "@/components/photo";
-import { catalog, hero, journeysFor } from "@/lib/catalog";
+import { catalog, journeysFor } from "@/lib/catalog";
 import { money } from "@/lib/price";
 
 export default async function HomePage({ searchParams }: { searchParams: Promise<{ joined?: string }> }) {
   const query = await searchParams;
-  const opening = hero("hero-amalfi");
   const portrait = catalog.destinations.find((item) => item.slug === "japan")?.gallery.find((item) => item.role === "detail")
     ?? catalog.destinations[2].hero;
   const featured = ["amalfi-coast", "masai-mara"].map((slug) => catalog.journeys.find((item) => item.slug === slug)!);
@@ -21,15 +21,26 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       <main>
         <section className="hero">
           <div className="hero-media">
-            <Photo photo={opening} priority sizes="100vw" />
+            <Image
+              src="/images/hero/positano.webp"
+              alt="Sunlit Positano coastline and cliffs"
+              fill
+              priority
+              sizes="100vw"
+            />
           </div>
           <div className="hero-shade" />
           <div className="hero-copy">
-            <h1 className="display">Extraordinary places. Unforgettable journeys.</h1>
+            <h1>
+              <span>Extraordinary</span>
+              <span>places.</span>
+              <span>Unforgettable</span>
+              <span>journeys.</span>
+            </h1>
             <p className="support">Thoughtfully curated escapes for those who believe the journey should be as remarkable as the destination.</p>
             <div className="actions">
               <Link className="button light" href="/journeys">View journeys</Link>
-              <Link className="text-link" href="/bespoke">Plan a private journey</Link>
+              <Link className="button ghost" href="/bespoke">Plan a private journey</Link>
             </div>
             <form className="searchline" action="/journeys">
               <input name="q" aria-label="Where" placeholder="Where" />
@@ -180,7 +191,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           </div>
         </section>
       </main>
-      <Footer credit={opening.credit} />
+      <Footer />
     </>
   );
 }

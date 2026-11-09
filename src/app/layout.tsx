@@ -5,7 +5,7 @@ import "./globals.css";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-serif",
   display: "swap",
 });

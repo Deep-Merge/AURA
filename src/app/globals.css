@@ -84,38 +84,44 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; }
   position: relative;
   min-height: calc(100svh - 72px);
   display: grid;
-  align-items: end;
+  align-items: center;
   color: white;
 }
 .hero-media, .frame { position: relative; overflow: hidden; background: var(--sand); }
 .frame { border-radius: 14px; }
 .hero-media { position: absolute; inset: 0; border-radius: 0; }
 .hero-media img, .frame img { object-fit: cover; }
+.hero-media img { object-position: 68% center; }
 .hero-shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(20, 33, 43, 0.58) 0%, rgba(20, 33, 43, 0.22) 36%, rgba(20, 33, 43, 0) 58%),
-    linear-gradient(to top, rgba(20, 33, 43, 0.5) 0%, rgba(20, 33, 43, 0.05) 46%, rgba(20, 33, 43, 0.08) 100%);
+    linear-gradient(90deg, rgba(6, 28, 48, 0.42) 0%, rgba(6, 28, 48, 0.1) 32%, rgba(6, 28, 48, 0) 50%),
+    linear-gradient(to top, rgba(6, 24, 42, 0.28) 0%, rgba(6, 24, 42, 0) 38%);
 }
-.hero-copy { position: relative; z-index: 1; width: min(760px, calc(100% - 48px)); margin: 0 0 48px 28px; }
+.hero-copy { position: relative; z-index: 1; width: min(880px, calc(100% - 96px)); margin: 0 0 0 56px; }
 .hero h1 {
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(52px, 6.4vw, 84px);
-  max-width: 11ch;
-  color: white;
-  line-height: 0.96;
-  text-shadow: 0 2px 18px rgba(20, 33, 43, 0.35);
+  font-weight: 400;
+  font-size: clamp(52px, 5.6vw, 84px);
+  margin: 0;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  hanging-punctuation: allow-end;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: geometricPrecision;
 }
+.hero h1 span { display: block; }
 .hero .eyebrow { color: white; }
 .hero .support {
-  max-width: 34rem;
-  margin-top: 16px;
-  font-size: 18px;
+  max-width: 30rem;
+  margin: 28px 0 0;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.55;
-  color: white;
-  text-shadow: 0 1px 12px rgba(20, 33, 43, 0.4);
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.9);
 }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 18px; }
 .button, .text-link {
@@ -143,6 +149,12 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; }
   border-bottom: 1px solid var(--blue);
 }
 .hero .text-link { color: white; border-bottom-color: white; }
+.hero .button.ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+}
+.hero .button.ghost:hover { background: rgba(255, 255, 255, 0.14); }
 .searchline {
   display: grid;
   grid-template-columns: 1.4fr 1fr 0.8fr auto;
